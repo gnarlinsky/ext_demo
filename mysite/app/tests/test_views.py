@@ -12,6 +12,7 @@ class ViewsTests(TestCase):
         t_info(self._testMethodName + ": " + self._testMethodDoc, 3)
 
     def test_signup(self):
+        """ Test signup view """
         #enduser = EndUser.objects.create(first_name='Lisa', last_name='Simpson')
         #self.assertEqual(unicode(enduser), 'Lisa Simpson')
         t_info('if  request.method == "POST"', 5)
