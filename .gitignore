@@ -5,3 +5,5 @@ link_to_this_gwiki
 tsod.pdf
 todo.txt
 *.pyc
+htmlcov
+*.swp
