@@ -2,7 +2,7 @@ from django.test import TestCase, LiveServerTestCase
 from django.test.client import Client
 from app.models import EndUser, EndUserEmail
 from django.contrib.contenttypes.models import ContentType
-from test_tools import t_info
+from ttools import t_info
 
 
 class EndUserTests(TestCase):
