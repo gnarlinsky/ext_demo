@@ -195,8 +195,8 @@ DJANGO_APPS = (
 )
 
 THIRD_PARTY_APPS = (
-   'suit', 
-   'bootstrap-toolkit',
+   'suit',
+   'bootstrap_toolkit',
     #'south', # Database migration helper
 )
 
