@@ -5,44 +5,44 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+
     <title>U of I Ext/ACES demo app</title>
-    <meta name="description" content="">
-    <meta name="author" content="Dylan Verheul">
-    {% comment %}
-    {% bootstrap_stylesheet_tag %}
-    {% bootstrap_stylesheet_tag "responsive" %}
-    {% comment %}
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.css">
-    {% endcomment %}
+
+    <meta name="description" content="U of I Ext/ACES demo app">
+    <meta name="author" content="Nadia Karlinsky">
+
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap-responsive.css' %}">
     <style type="text/css">
         body {
-            padding-top: 60px;
+            padding-top: 0px;
         }
         .container {
             margin: 0px auto;
             padding: 20px;
-            }
+            width: 600px;
+        }
     </style>
+
     <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    {% bootstrap_javascript_tag %}
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
     {% block extra_head %}{% endblock %}
 </head>
 
 <body>
 
 <div class="container">
-
-    {% bootstrap_messages %}
+    {% if alert == "submit_success" %}
+        <div class="alert alert-success">
+            <a class="close" data-dismiss="alert">×</a>
+            <strong>Thanks!</strong> You are signed up.
+        </div>
+    {% endif %}
 
     {% block content %}Empty page{% endblock %}
-
-
 </div> <!-- container -->
 
 </body>
