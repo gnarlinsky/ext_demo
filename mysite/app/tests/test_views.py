@@ -5,6 +5,7 @@ from app.views import signup
 from django.contrib.contenttypes.models import ContentType
 from ttools import t_info
 
+# TODO: additional tests
 
 class ViewsTests(TestCase):
     def setUp(self):
@@ -19,5 +20,3 @@ class ViewsTests(TestCase):
         t_info('if not  request.method == "POST"', 5)
         t_info('if eu_form is valid', 5)
         t_info('if eu_form is not valid', 5)
-
-    # TODO:
