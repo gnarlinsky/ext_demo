@@ -5,7 +5,7 @@
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 PAPER         =
-BUILDDIR      = _build
+BUILDDIR      = ../gh-pages
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
@@ -77,17 +77,17 @@ qthelp:
 	@echo
 	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
 	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/UofIExtensionInterviewApp.qhcp"
+	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/pyendeavor.qhcp"
 	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/UofIExtensionInterviewApp.qhc"
+	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/pyendeavor.qhc"
 
 devhelp:
 	$(SPHINXBUILD) -b devhelp $(ALLSPHINXOPTS) $(BUILDDIR)/devhelp
 	@echo
 	@echo "Build finished."
 	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/UofIExtensionInterviewApp"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/UofIExtensionInterviewApp"
+	@echo "# mkdir -p $$HOME/.local/share/devhelp/pyendeavor"
+	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/pyendeavor"
 	@echo "# devhelp"
 
 epub:
