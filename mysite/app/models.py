@@ -39,3 +39,36 @@ class EndUserEmail(models.Model):
         """ Represent object with email address.
         """
         return self.email
+
+
+####################################################################
+# Prevent interactive question about wanting a superuser created.
+####################################################################
+# From http://stackoverflow.com/questions/1466827/ --
+# Prevent interactive question about wanting a superuser created.  (This code
+# has to go in the "models" module so that it gets processed by the "syncdb"
+# command during database creation.)
+# pragma: no cover  (exclude this code from coverage)
+signals.post_syncdb.disconnect(
+    create_superuser, sender=auth_models,
+    dispatch_uid='django.contrib.auth.management.create_superuser')
+
+
+# Create our own test user automatically.
+def create_testuser(app, created_models, verbosity, **kwargs):  # pragma: no cover
+    if not settings.DEBUG:
+        return
+    try:
+        auth_models.User.objects.get(username='superuser')
+    except auth_models.User.DoesNotExist:
+        print '*' * 80
+        print 'Creating test user -- login: superuser, password: superuser'
+        print '*' * 80
+        assert auth_models.User.objects.create_superuser(
+            'homer', 'homer@gmail.com', 'homer')
+    else:
+        print 'User homer (password homer) already exists'
+
+signals.post_syncdb.connect(
+    create_testuser, sender=auth_models,
+    dispatch_uid='common.models.create_testuser')
