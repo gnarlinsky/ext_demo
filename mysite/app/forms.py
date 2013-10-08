@@ -4,14 +4,13 @@ from app.models import EndUser
 from app.helpers import parse_emails
 
 class EndUserForm(forms.ModelForm):
-    """ docstring placeholder """
+    """ Creates a form based on the `EndUser` model.  """
+
     class Meta:
-        """ docstring placeholder """
+        """ Class container with various options (e.g. which fields should be
+        rendered) attached to EndUserForm instance.
+        """
         model = EndUser
-        # TODO: so the below was complaining that it could not find the
-        # 'emails' field, so I just commented it out (i need all of them
-        # anyway)... but what if it's a
-        # symptopm of a bigger problem?
         fields = ('first_name', 'last_name', 'street_address', 'city', 'state',
                   'phone', 'all_emails')
         widgets = {
@@ -20,12 +19,15 @@ class EndUserForm(forms.ModelForm):
 
     def __init__(self, *arg, **kwarg):
         super(EndUserForm, self).__init__(*arg, **kwarg)
+        # no empty forms
         self.empty_permitted = False
 
     def clean(self):
-        """ Custom validation for text field with more than one email address.
+        """ Custom validation with custom error for text field with more than
+        one email address.
+
+        :returns: A dictionary of cleaned form fields
         """
-        # TODO: what happens if field is empty on submit? 
         emails_field = self.cleaned_data.get('all_emails')
         if emails_field:
             valid_emails = parse_emails(emails_field)

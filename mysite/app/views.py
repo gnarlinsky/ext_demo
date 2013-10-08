@@ -11,8 +11,7 @@ def signup_admin(request):
 def signup(request):
     """ Display and process sign up form """
     alert = None
-    # if form is being submitted
-    if request.method == 'POST':
+    if request.method == 'POST':   # if form is being submitted
         eu_form = EndUserForm(request.POST)
         if eu_form.is_valid():
             eu_form.save()
