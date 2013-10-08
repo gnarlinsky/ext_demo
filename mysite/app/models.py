@@ -2,7 +2,9 @@ from django.db import models
 from localflavor.us.us_states import STATE_CHOICES
 
 class EndUser(models.Model):
-    """ docstring go here """
+    """ Model representing user's contact information.
+    """
+
     first_name = models.CharField(max_length=25, blank=False, null=False)
     last_name = models.CharField(max_length=25, blank=False, null=False)
     street_address = models.CharField(max_length=100, blank=False, null=False)
@@ -13,20 +15,27 @@ class EndUser(models.Model):
     all_emails = models.TextField('Email(s)', blank=False, null=False)
 
     def emails(self):
-        """ Return all email addresses associated with this enduser """
+        """ Gather all email addresses associated with this enduser.
+
+        :returns: A string of email addresses, separated by commas
+        """
         # referring to the "reverse" of a ForeignKey (many-to-one) relationship
         all_emails = [e.__unicode__() for e in self.enduseremail_set.all()]
         return ', '.join(all_emails)
 
     def __unicode__(self):
-        """ Represent this object with first name and last name """
+        """ Represent this object with first name and last name.
+        """
         return '{} {}'.format(self.first_name, self.last_name)
 
 class EndUserEmail(models.Model):
-    """ docstring placeholder """
+    """ Model representing email address, with ForeignKey (i.e. many-to-one
+    relationship) to an EndUser.
+    """
     enduser = models.ForeignKey(EndUser)
     email = models.EmailField(max_length=100, blank=False, null=False)
 
     def __unicode__(self):
-        """ Represent object with email address """
+        """ Represent object with email address.
+        """
         return self.email
