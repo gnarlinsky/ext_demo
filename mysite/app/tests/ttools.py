@@ -9,14 +9,18 @@ def t_info(mess_str, level=1):
     PRINT_INFO is False, these still serve as documentation for the associated
     lines. Takes a string with the message and level, which refers to the type
     of message, and formats the string with color and indentation accordingly.
-    The higher the level number, the more verbose/specific. 
+    The higher the level number, the more verbose/specific.
 
     Types of messages:
+
     - level 1: TestCase name (white on magenta, prepend new line)
     - level 2: test method name and docstring (green, no indentation)
     - level 3: action description (cyan, no indentation)
     - level 4: assertion description (blue, indent one)
     - level 5: closer assertion description (magenta, indent two)
+
+    :param mess_str: The string to display
+    :param level: Optional int indicating the level number
     """
     if PRINT_INFO:
         if level == 1:
