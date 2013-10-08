@@ -7,7 +7,6 @@ class HelpersTests(TestCase):
         t_info('TestCase HelpersTests', 1)
         t_info(self._testMethodName + ': ' + self._testMethodDoc, 3)
 
-# TODO: these are just copied from elsewhere, so complete
     def test_helpers(self):
         """
         Test that valid email addresses are parsed from string.

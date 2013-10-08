@@ -29,7 +29,6 @@ class EndUserTests(TestCase):
         self.assertEqual(enduser.emails(),
                          'test1@email.com, test2@email.com, test3@email.com')
 
-
 class EndUserEmailTest(TestCase):
     def setUp(self):
         t_info("TestCase EndUserEmailTests", 1)
