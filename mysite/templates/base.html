@@ -35,12 +35,20 @@
 <body>
 
 <div class="container">
-    {% if alert == "submit_success" %}
-        <div class="alert alert-success">
-            <a class="close" data-dismiss="alert">×</a>
-            <strong>Thanks!</strong> You are signed up.
-        </div>
-    {% endif %}
+
+{% if messages %}
+    {% for message in messages %}
+        {% if message.tags == 'success' %}
+            {% ifequal message.message 'submit_success' %}
+                <div class="alert alert-success">
+                    <a class="close" data-dismiss="alert">×</a>
+                    <strong>Thanks!</strong> You are signed up.
+                </div>
+            {% endifequal %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
 
     {% block content %}Empty page{% endblock %}
 </div> <!-- container -->
