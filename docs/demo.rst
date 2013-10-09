@@ -1,7 +1,7 @@
 app Package
 ==================
 
-:mod:`demo`
+:mod:`app`
 -------------------------------
 
 .. automodule:: app.__init__
@@ -10,12 +10,15 @@ app Package
     :show-inheritance:
 
 :mod:`admin`
------------------------
+----------------------
 
 .. automodule:: app.admin
     :members:
     :undoc-members:
     :show-inheritance:
+
+.. note::
+   `search_fields` adds adds a search box at the top of the change list and specifies which fields (i.e. model attributes or method results) to search on. There is no limit on the number of search fields, but this uses a LIKE SQL query, so keep it reasonable.
 
 :mod:`forms`
 ---------------------------
@@ -24,6 +27,7 @@ app Package
     :members:
     :undoc-members:
     :show-inheritance:
+
 
 :mod:`models`
 -----------------------------

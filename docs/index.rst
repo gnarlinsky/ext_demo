@@ -1,26 +1,89 @@
-.. demo documentation master file, created by
-   sphinx-quickstart on Sun Feb 17 11:35:50 2013.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. demo documentation master file, created by Nadia Karlinsky
 
 
+##########################
+Demo App Documentation
+##########################
+
+.. toctree::
+   :maxdepth: 6
+
+   index
+
+About
+===============
+
+Small demo of single-page web application with a contact form for customers
+and an administrative interface for admin users to manage (display, search,
+edit, delete) customers' information. The form for customers contains fields
+for contact information. *Customers should be able to enter
+multiple email addresses.*
 
 
+Created with
+=============================================================
 
-Testing inserting images:
-===============================
-.. image:: test_image.png
-   :width: 300 px
+Python/Django/SQLite (development version)
 
-.. contents::
+The front end  (customer contact information form) is responsively styled using
+`Bootstrap <http://getbootstrap.com/>`_ and `Django Bootstrap Toolkit
+<https://github.com/dyve/django-bootstrap-toolkit/>`_. The admin interface
+(list of users, change form for individual users, login) is responsively styled
+using `Bootstrap <http://getbootstrap.com/>`_ and `Django Suit
+<http://djangosuit.com/>`_, with some customization.
 
 
-Setting up
-======================================
-<README.md goes here>
+Setting up and running the application
+==========================================
 
-.. include:: ../README.rst
-   (actually, change to readme.md, not rst)
+Clone the repository.
+
+.. code-block:: shell
+
+    $ git clone git@github.com:gnarlinsky/ext_demo.git
+
+To avoid dependency issues, create a virtualenv and install the required
+packages.
+
+Inside whereever you keep your virtualenv's:
+
+.. code-block:: shell
+
+    $ virtualenv ve --no-site-packages
+    $ source ve/bin/activate      # activate the virtual environment
+
+Install the requirements:
+
+.. code-block:: shell
+
+    $ cd ext_demo/mysite/
+    $ pip install -r requirements.txt
+
+Create the database and load the initial data:
+
+.. code-block:: shell
+
+    $ python manage.py syncdb
+    $ python manage.py loaddata app/fixtures/initial.json
+
+Run the Django development server:
+
+.. code-block:: shell
+
+    $ python manage.py runserver
+
+
+Go to [http://localhost:8000/signup](http://localhost:8000/signup) to see
+interface for customers,
+or to [http://localhost:8000/admin](http://localhost:8000/signupadmin) to see the
+administrative interface. Log in with username *homer* and password *homer*.
+
+Note that `manage.py syncdb` creates a database, so if you would like to
+start fresh, make sure to delete it. Assuming you're still in the same
+directory (`ext_demo/mysite/`)::
+
+    $ rm mysite_config_root/default.db
+
 
 Developer documentation
 ===============================
@@ -33,33 +96,33 @@ API
    demo
    demo-other
    demo-tests
-   temp_test
 
-Internal documentation/design documents
+Internal documentation/design notes
 -----------------------------------------------
-So here go decisions like the schema, and stuff that didn't go into the
-individual 'Internal documentation' parts of each py file
 
-Scripts
----------------
-Not sure where to put or categorize this...........
-But here should talk about cover.sh
+.. toctree::
+   :maxdepth: 4
 
-** ``Cover.sh`` ** - The line ``open htmlcov/index.html`` opens the HTML
-coverage information with your system's default browser. But this may only work
-in OS X, where the ``open`` command opens directories and files with the
-default application for the file's extension — so you might want to comment out
-that statement.
-
-End user documentation
-======================================
-(Yes, this is silly for this project, but it's just a demo)
+   internal_and_design
 
 
-Administrative user documentation
-======================================
-FAQ
---------
+
+
+Testing and coverage
+============================
+.. include:: testing_and_coverage.rst
+
+End user (administrative users) documentation
+==================================================
+.. include:: enduser_documentation.rst
+
+
+Meta
+=========
+This documentation
+---------------------
+Documentation created with `Sphinx, a Python document generator
+<http://sphinx-doc.org/>`_.
 
 
 Indices and tables
