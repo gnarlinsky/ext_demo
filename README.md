@@ -66,5 +66,6 @@ directory (``ext_demo/mysite/``):
 A lot more
 ==============
 
-See <link to documentation> for detailed end-user and developer documentation and more.
+See
+[http://gnarlinsky.github.io/ext_demo/](http://gnarlinsky.github.io/ext_demo/) for detailed end-user and developer documentation and more.
 
