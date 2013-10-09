@@ -1,7 +1,7 @@
 [
 {
   "pk": 4, 
-  "model": "app.enduser", 
+  "model": "app.customer", 
   "fields": {
     "city": "Urbana", 
     "first_name": "Alice", 
@@ -14,7 +14,7 @@
 },
 {
   "pk": 5, 
-  "model": "app.enduser", 
+  "model": "app.customer", 
   "fields": {
     "city": "Chicago", 
     "first_name": "Jane", 
@@ -27,7 +27,7 @@
 },
 {
   "pk": 6, 
-  "model": "app.enduser", 
+  "model": "app.customer", 
   "fields": {
     "city": "springfield", 
     "first_name": "Lisa", 
@@ -40,7 +40,7 @@
 },
 {
   "pk": 7, 
-  "model": "app.enduser", 
+  "model": "app.customer", 
   "fields": {
     "city": "springfield", 
     "first_name": "Maggie", 
@@ -53,7 +53,7 @@
 },
 {
   "pk": 8, 
-  "model": "app.enduser", 
+  "model": "app.customer", 
   "fields": {
     "city": "springfield", 
     "first_name": "Bart", 
@@ -66,57 +66,57 @@
 },
 {
   "pk": 6, 
-  "model": "app.enduseremail", 
+  "model": "app.customeremail", 
   "fields": {
-    "enduser": 4, 
+    "customer": 4, 
     "email": "as@gmail.com"
   }
 },
 {
   "pk": 7, 
-  "model": "app.enduseremail", 
+  "model": "app.customeremail", 
   "fields": {
-    "enduser": 5, 
+    "customer": 5, 
     "email": "blah@gmail.com"
   }
 },
 {
   "pk": 8, 
-  "model": "app.enduseremail", 
+  "model": "app.customeremail", 
   "fields": {
-    "enduser": 5, 
+    "customer": 5, 
     "email": "blah2@gmail.com"
   }
 },
 {
   "pk": 9, 
-  "model": "app.enduseremail", 
+  "model": "app.customeremail", 
   "fields": {
-    "enduser": 6, 
+    "customer": 6, 
     "email": "lisa.s@gmail.com"
   }
 },
 {
   "pk": 10, 
-  "model": "app.enduseremail", 
+  "model": "app.customeremail", 
   "fields": {
-    "enduser": 6, 
+    "customer": 6, 
     "email": "thelisa@simpsons.com"
   }
 },
 {
   "pk": 11, 
-  "model": "app.enduseremail", 
+  "model": "app.customeremail", 
   "fields": {
-    "enduser": 7, 
+    "customer": 7, 
     "email": "maggie.s@gmail.com"
   }
 },
 {
   "pk": 12, 
-  "model": "app.enduseremail", 
+  "model": "app.customeremail", 
   "fields": {
-    "enduser": 8, 
+    "customer": 8, 
     "email": "cowabunga666@gmail.com"
   }
 }

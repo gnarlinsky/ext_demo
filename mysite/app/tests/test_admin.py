@@ -1,7 +1,7 @@
 from django.test import TestCase
 from app.admin import EmailFormSet
-from app.models import EndUser
-from app.forms import EndUserForm
+from app.models import Customer
+from app.forms import CustomerForm
 from ttools import t_info
 
 # TODO: more comprehensive test cases; parallel functional tests
@@ -14,7 +14,7 @@ class AdminTests(TestCase):
     def test_clean(self):
         """
         Test custom validation -- if admin attempting to delete all email
-        addresses for current enduser, does the correct validation error get
+        addresses for current customer, does the correct validation error get
         raised?
         """
         pass

@@ -1,6 +1,6 @@
 from django.test import TestCase
-from app.models import EndUser
-from app.forms import EndUserForm
+from app.models import Customer
+from app.forms import CustomerForm
 from ttools import t_info
 
 # TODO: more comprehensive test cases for incorrect field inputs
@@ -17,7 +17,7 @@ class FormsTests(TestCase):
         Test that empty_permitted is set to False upon creation (i.e. cannot
         submit an empty form).
         """
-        eu_form = EndUserForm()
+        eu_form = CustomerForm()
         self.assertEqual(eu_form.empty_permitted, False)
 
     def test_cant_submit_empty_form(self):
@@ -25,7 +25,7 @@ class FormsTests(TestCase):
         Test that an empty form does not validate.
         """
         form_data = {}  # empty
-        eu_form = EndUserForm(data=form_data)
+        eu_form = CustomerForm(data=form_data)
         self.assertEqual(eu_form.is_valid(), False)
 
     def test_empty_form_errors(self):
@@ -34,7 +34,7 @@ class FormsTests(TestCase):
         for every field.
         """
         form_data = {}
-        eu_form = EndUserForm(data=form_data)
+        eu_form = CustomerForm(data=form_data)
         eu_form.is_valid()  # attempt to validate to get errors
         correct_errors = {'all_emails': [u'This field is required.'],
                           'city': [u'This field is required.'],
@@ -56,7 +56,7 @@ class FormsTests(TestCase):
                      'phone': '1234567890',
                      'state': 'IL',
                      'street_address': '1 North St.'}
-        eu_form = EndUserForm(data=form_data)
+        eu_form = CustomerForm(data=form_data)
 
         self.assertEqual(eu_form.is_valid(), True)
 
@@ -72,7 +72,7 @@ class FormsTests(TestCase):
                      'phone': '1234567890',
                      'state': 'IL',
                      'street_address': '1 North St.'}
-        eu_form = EndUserForm(data=form_data)
+        eu_form = CustomerForm(data=form_data)
         eu_form.is_valid()  # attempt to validate to get errors
         correct_errors = {}
         self.assertEqual(eu_form._errors, correct_errors)
@@ -88,7 +88,7 @@ class FormsTests(TestCase):
                      'phone': '1234567890',
                      'state': 'IL',
                      'street_address': '1 North St.'}
-        eu_form = EndUserForm(data=form_data)
+        eu_form = CustomerForm(data=form_data)
         eu_form.is_valid()  # attempt to validate to get errors
         corr_error = eu_form.error_class(
             ['Please enter at least one valid email address']
