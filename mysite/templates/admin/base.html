@@ -14,7 +14,18 @@
   {% if 'SHOW_REQUIRED_ASTERISK'|suit_conf %}
   <style type="text/css">.required:after { content: '*'; margin: 0 0 0 5px; position: absolute; color: #ccc;}</style>
   {% endif %}
-  {% block extrahead %}{% endblock %}
+  {% block extrahead %}
+    <script>
+    $(function($) {
+        $(document).ready(function($) {
+            var djsuit = document.getElementsByTagName("h1");
+            if (djsuit[0].innerText == ' Django Suit') {
+                djsuit[0].innerText = ' Demo App'; 
+            }
+        });
+    });
+    </script>
+  {% endblock %}
   {% block blockbots %}
     <meta name="robots" content="NONE,NOARCHIVE"/>{% endblock %}
 </head>
