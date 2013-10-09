@@ -26,7 +26,7 @@ class EndUserForm(forms.ModelForm):
         """ Custom validation with custom error for text field with more than
         one email address.
 
-        :returns: A dictionary of cleaned form fields
+        :returns: A dictionary or list of dictionaries of cleaned form fields
         """
         emails_field = self.cleaned_data.get('all_emails')
         if emails_field:
