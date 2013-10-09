@@ -8,3 +8,4 @@ todo.txt
 htmlcov
 *.swp
 *.db
+.coverage
