@@ -8,6 +8,6 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^signup/', views.signup, name='signup'),
     url(r'^signupadmin/', views.signup_admin),
-    url(r'^admin/$', lambda x: HttpResponseRedirect('/admin/app/enduser')),
+    url(r'^admin/$', lambda x: HttpResponseRedirect('/admin/app/customer')),
     url(r'^admin/', include(admin.site.urls)),
 )
