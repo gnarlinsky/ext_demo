@@ -1,0 +1,163 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>app.admin &mdash; Demo 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Demo 0.1 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Demo 0.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for app.admin</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">django.forms.models</span> <span class="kn">import</span> <span class="n">BaseInlineFormSet</span>
+<span class="kn">from</span> <span class="nn">app.models</span> <span class="kn">import</span> <span class="n">Customer</span><span class="p">,</span> <span class="n">CustomerEmail</span>
+<span class="kn">from</span> <span class="nn">django.core.exceptions</span> <span class="kn">import</span> <span class="n">ValidationError</span>
+
+
+
+<div class="viewcode-block" id="EmailFormSet"><a class="viewcode-back" href="../../demo.html#app.admin.EmailFormSet">[docs]</a><span class="k">class</span> <span class="nc">EmailFormSet</span><span class="p">(</span><span class="n">BaseInlineFormSet</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Custom validation. &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="EmailFormSet.clean"><a class="viewcode-back" href="../../demo.html#app.admin.EmailFormSet.clean">[docs]</a>    <span class="k">def</span> <span class="nf">clean</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Custom validation to ensure Customer not left without any emails.</span>
+
+<span class="sd">        :raises: ValidationError</span>
+<span class="sd">        :returns: A dictionary or list of dictionaries of cleaned form fields</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c"># Is the admin trying to delete every email for this customer? (I.e. is</span>
+        <span class="c"># every non-empty dict&#39;s DELETE set to True?) If so, create error.</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">all_emails</span> <span class="o">=</span> <span class="p">[</span><span class="n">eu_email</span> <span class="k">for</span> <span class="n">eu_email</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cleaned_data</span> <span class="k">if</span> <span class="n">eu_email</span><span class="p">]</span>
+            <span class="n">emails_to_del</span> <span class="o">=</span> <span class="p">[</span><span class="n">eu_email</span> <span class="k">for</span> <span class="n">eu_email</span> <span class="ow">in</span> <span class="n">all_emails</span> <span class="k">if</span> <span class="n">eu_email</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;DELETE&#39;</span><span class="p">)]</span>
+            <span class="n">num_emails_to_del</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">emails_to_del</span><span class="p">)</span>
+            <span class="n">num_all_emails</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_emails</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">num_all_emails</span> <span class="o">==</span> <span class="n">num_emails_to_del</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span><span class="s">&#39;At least one email address is required&#39;</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span><span class="s">&#39;At least one email address is required&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cleaned_data</span>
+
+</div></div>
+<div class="viewcode-block" id="EmailInline"><a class="viewcode-back" href="../../demo.html#app.admin.EmailInline">[docs]</a><span class="k">class</span> <span class="nc">EmailInline</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">TabularInline</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Options for inline editing of CustomerEmail instances</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">CustomerEmail</span>
+    <span class="n">formset</span> <span class="o">=</span> <span class="n">EmailFormSet</span>
+    <span class="n">extra</span> <span class="o">=</span> <span class="mi">2</span> <span class="c"># by default, provide two email fields</span>
+
+</div>
+<div class="viewcode-block" id="CustomerAdmin"><a class="viewcode-back" href="../../demo.html#app.admin.CustomerAdmin">[docs]</a><span class="k">class</span> <span class="nc">CustomerAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Define options and customization for admin. &quot;&quot;&quot;</span>
+
+    <span class="c"># add ability to edit emails directly on the customer change_form</span>
+    <span class="n">inlines</span> <span class="o">=</span> <span class="p">[</span><span class="n">EmailInline</span><span class="p">]</span>
+
+    <span class="c">###########################################################################</span>
+    <span class="c"># what to display on change_list (columns, filter, ... )</span>
+    <span class="c">###########################################################################</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;first_name&#39;</span><span class="p">,</span> <span class="s">&#39;last_name&#39;</span><span class="p">,</span> <span class="s">&#39;street_address&#39;</span><span class="p">,</span> <span class="s">&#39;city&#39;</span><span class="p">,</span> <span class="s">&#39;state&#39;</span><span class="p">,</span>
+                    <span class="s">&#39;phone&#39;</span><span class="p">,</span> <span class="s">&#39;emails&#39;</span><span class="p">)</span>
+    <span class="n">list_display_links</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;first_name&#39;</span><span class="p">,</span> <span class="s">&#39;last_name&#39;</span><span class="p">]</span>
+    <span class="n">search_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;first_name&#39;</span><span class="p">,</span> <span class="s">&#39;last_name&#39;</span><span class="p">,</span>
+                     <span class="s">&#39;street_address&#39;</span><span class="p">,</span> <span class="s">&#39;city&#39;</span><span class="p">,</span> <span class="s">&#39;state&#39;</span><span class="p">,</span>
+                     <span class="s">&#39;all_emails&#39;</span><span class="p">,</span> <span class="s">&#39;phone&#39;</span><span class="p">]</span>
+
+    <span class="c">###########################################################################</span>
+    <span class="c"># what to show, in what order, on change_form</span>
+    <span class="c">###########################################################################</span>
+    <span class="n">fieldsets</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;fields&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;first_name&#39;</span><span class="p">,</span> <span class="s">&#39;last_name&#39;</span><span class="p">]}),</span>
+        <span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;fields&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;street_address&#39;</span><span class="p">,</span> <span class="s">&#39;city&#39;</span><span class="p">,</span> <span class="s">&#39;state&#39;</span><span class="p">,</span> <span class="s">&#39;phone&#39;</span><span class="p">]}),</span>
+    <span class="p">]</span>
+
+<div class="viewcode-block" id="CustomerAdmin.has_add_permission"><a class="viewcode-back" href="../../demo.html#app.admin.CustomerAdmin.has_add_permission">[docs]</a>    <span class="k">def</span> <span class="nf">has_add_permission</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Remove admin&#39;s ability to add more Customer objects; don&#39;t display</span>
+<span class="sd">        &#39;Save and Add&#39; button on change_form and &#39;Add New&#39; button on</span>
+<span class="sd">        change_list.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">False</span>
+</div></div>
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Customer</span><span class="p">,</span> <span class="n">CustomerAdmin</span><span class="p">)</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Demo 0.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Nadia Karlinsky.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

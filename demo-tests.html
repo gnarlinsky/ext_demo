@@ -1,0 +1,276 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Unit tests &mdash; Demo 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Demo 0.1 documentation" href="index.html" />
+    <link rel="next" title="Form handling" href="internal_and_design.html" />
+    <link rel="prev" title="Other" href="demo-other.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="internal_and_design.html" title="Form handling"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="demo-other.html" title="Other"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Demo 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="unit-tests">
+<h1>Unit tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">¶</a></h1>
+<p>Each <tt class="docutils literal"><span class="pre">*.py</span></tt> in the <tt class="docutils literal"><span class="pre">tests</span></tt> directory, as well as various helper files, have
+associated <tt class="docutils literal"><span class="pre">test_*.py</span></tt> files in the <tt class="docutils literal"><span class="pre">tests</span></tt> directory, e.g. the unit tests
+for <tt class="docutils literal"><span class="pre">views.py</span></tt> are in <tt class="docutils literal"><span class="pre">tests/test_views.py</span></tt>.</p>
+<p>Lines like <tt class="docutils literal"><span class="pre">t_info('Is</span> <span class="pre">empty</span> <span class="pre">string</span> <span class="pre">parsed</span> <span class="pre">correctly?',</span> <span class="pre">5)</span></tt> provide
+additional documentation. See <a class="reference external" href="demo-other.html#module-app.tests.ttools">ttools.py</a> for more information.</p>
+<div class="section" id="module-app.tests.__init__">
+<span id="demo-tests"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">demo</span> <span class="pre">tests</span></tt><a class="headerlink" href="#module-app.tests.__init__" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-app.tests.test_admin">
+<span id="tests-admin"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">tests_admin</span></tt><a class="headerlink" href="#module-app.tests.test_admin" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="app.tests.test_admin.AdminTests">
+<em class="property">class </em><tt class="descclassname">app.tests.test_admin.</tt><tt class="descname">AdminTests</tt><big>(</big><em>methodName='runTest'</em><big>)</big><a class="reference internal" href="_modules/app/tests/test_admin.html#AdminTests"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#app.tests.test_admin.AdminTests" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.test.testcases.TestCase</span></tt></p>
+<dl class="method">
+<dt id="app.tests.test_admin.AdminTests.setUp">
+<tt class="descname">setUp</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/app/tests/test_admin.html#AdminTests.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#app.tests.test_admin.AdminTests.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.tests.test_admin.AdminTests.test_clean">
+<tt class="descname">test_clean</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/app/tests/test_admin.html#AdminTests.test_clean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#app.tests.test_admin.AdminTests.test_clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test custom validation &#8211; if admin attempting to delete all email
+addresses for current customer, does the correct validation error get
+raised?</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.tests.test_forms">
+<span id="tests-forms"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">tests_forms</span></tt><a class="headerlink" href="#module-app.tests.test_forms" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="app.tests.test_forms.FormsTests">
+<em class="property">class </em><tt class="descclassname">app.tests.test_forms.</tt><tt class="descname">FormsTests</tt><big>(</big><em>methodName='runTest'</em><big>)</big><a class="reference internal" href="_modules/app/tests/test_forms.html#FormsTests"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#app.tests.test_forms.FormsTests" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.test.testcases.TestCase</span></tt></p>
+<dl class="method">
+<dt id="app.tests.test_forms.FormsTests.setUp">
+<tt class="descname">setUp</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/app/tests/test_forms.html#FormsTests.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#app.tests.test_forms.FormsTests.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.tests.test_forms.FormsTests.test_can_submit_correct_form">
+<tt class="descname">test_can_submit_correct_form</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/app/tests/test_forms.html#FormsTests.test_can_submit_correct_form"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#app.tests.test_forms.FormsTests.test_can_submit_correct_form" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test that correct form validates.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.tests.test_forms.FormsTests.test_cant_submit_empty_form">
+<tt class="descname">test_cant_submit_empty_form</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/app/tests/test_forms.html#FormsTests.test_cant_submit_empty_form"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#app.tests.test_forms.FormsTests.test_cant_submit_empty_form" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test that an empty form does not validate.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.tests.test_forms.FormsTests.test_clean">
+<tt class="descname">test_clean</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/app/tests/test_forms.html#FormsTests.test_clean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#app.tests.test_forms.FormsTests.test_clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test that if the Emails (&#8216;all_emails&#8217;) field does not contain at
+least one valid email address, the correct error is returned.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.tests.test_forms.FormsTests.test_empty_form_errors">
+<tt class="descname">test_empty_form_errors</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/app/tests/test_forms.html#FormsTests.test_empty_form_errors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#app.tests.test_forms.FormsTests.test_empty_form_errors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test that submitting empty form returns &#8216;this field required&#8217; errors
+for every field.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.tests.test_forms.FormsTests.test_no_empty_permitted">
+<tt class="descname">test_no_empty_permitted</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/app/tests/test_forms.html#FormsTests.test_no_empty_permitted"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#app.tests.test_forms.FormsTests.test_no_empty_permitted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test that empty_permitted is set to False upon creation (i.e. cannot
+submit an empty form).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.tests.test_forms.FormsTests.test_no_form_errors">
+<tt class="descname">test_no_form_errors</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/app/tests/test_forms.html#FormsTests.test_no_form_errors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#app.tests.test_forms.FormsTests.test_no_form_errors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test that submitting a form with all fields correctly filled does not
+return any errors.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.tests.test_models">
+<span id="tests-models"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">tests_models</span></tt><a class="headerlink" href="#module-app.tests.test_models" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="app.tests.test_models.CustomerEmailTest">
+<em class="property">class </em><tt class="descclassname">app.tests.test_models.</tt><tt class="descname">CustomerEmailTest</tt><big>(</big><em>methodName='runTest'</em><big>)</big><a class="reference internal" href="_modules/app/tests/test_models.html#CustomerEmailTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#app.tests.test_models.CustomerEmailTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.test.testcases.TestCase</span></tt></p>
+<dl class="method">
+<dt id="app.tests.test_models.CustomerEmailTest.setUp">
+<tt class="descname">setUp</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/app/tests/test_models.html#CustomerEmailTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#app.tests.test_models.CustomerEmailTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.tests.test_models.CustomerEmailTest.test_unicode">
+<tt class="descname">test_unicode</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/app/tests/test_models.html#CustomerEmailTest.test_unicode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#app.tests.test_models.CustomerEmailTest.test_unicode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test that custom __unicode__() method returns email address</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="app.tests.test_models.CustomerTests">
+<em class="property">class </em><tt class="descclassname">app.tests.test_models.</tt><tt class="descname">CustomerTests</tt><big>(</big><em>methodName='runTest'</em><big>)</big><a class="reference internal" href="_modules/app/tests/test_models.html#CustomerTests"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#app.tests.test_models.CustomerTests" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.test.testcases.TestCase</span></tt></p>
+<dl class="method">
+<dt id="app.tests.test_models.CustomerTests.setUp">
+<tt class="descname">setUp</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/app/tests/test_models.html#CustomerTests.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#app.tests.test_models.CustomerTests.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.tests.test_models.CustomerTests.test_email">
+<tt class="descname">test_email</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/app/tests/test_models.html#CustomerTests.test_email"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#app.tests.test_models.CustomerTests.test_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test that email() returns all email addresses associated with this customer.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.tests.test_models.CustomerTests.test_unicode">
+<tt class="descname">test_unicode</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/app/tests/test_models.html#CustomerTests.test_unicode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#app.tests.test_models.CustomerTests.test_unicode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test that custom __unicode__() method returns full name of customer.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.tests.test_views">
+<span id="tests-views"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">tests_views</span></tt><a class="headerlink" href="#module-app.tests.test_views" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="app.tests.test_views.ViewsTests">
+<em class="property">class </em><tt class="descclassname">app.tests.test_views.</tt><tt class="descname">ViewsTests</tt><big>(</big><em>methodName='runTest'</em><big>)</big><a class="reference internal" href="_modules/app/tests/test_views.html#ViewsTests"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#app.tests.test_views.ViewsTests" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.test.testcases.TestCase</span></tt></p>
+<dl class="method">
+<dt id="app.tests.test_views.ViewsTests.setUp">
+<tt class="descname">setUp</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/app/tests/test_views.html#ViewsTests.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#app.tests.test_views.ViewsTests.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.tests.test_views.ViewsTests.test_signup">
+<tt class="descname">test_signup</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/app/tests/test_views.html#ViewsTests.test_signup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#app.tests.test_views.ViewsTests.test_signup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test signup view</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Unit tests</a><ul>
+<li><a class="reference internal" href="#module-app.tests.__init__"><tt class="docutils literal"><span class="pre">demo</span> <span class="pre">tests</span></tt></a></li>
+<li><a class="reference internal" href="#module-app.tests.test_admin"><tt class="docutils literal"><span class="pre">tests_admin</span></tt></a></li>
+<li><a class="reference internal" href="#module-app.tests.test_forms"><tt class="docutils literal"><span class="pre">tests_forms</span></tt></a></li>
+<li><a class="reference internal" href="#module-app.tests.test_models"><tt class="docutils literal"><span class="pre">tests_models</span></tt></a></li>
+<li><a class="reference internal" href="#module-app.tests.test_views"><tt class="docutils literal"><span class="pre">tests_views</span></tt></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="demo-other.html"
+                        title="previous chapter">Other</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="internal_and_design.html"
+                        title="next chapter">Form handling</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/demo-tests.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="internal_and_design.html" title="Form handling"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="demo-other.html" title="Other"
+             >previous</a> |</li>
+        <li><a href="index.html">Demo 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Nadia Karlinsky.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

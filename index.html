@@ -1,0 +1,418 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Demo App Documentation &mdash; Demo 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Demo 0.1 documentation" href="#" />
+    <link rel="next" title="Demo App Documentation" href="" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="#" title="Demo App Documentation"
+             accesskey="N">next</a> |</li>
+        <li><a href="#">Demo 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="demo-app-documentation">
+<h1>Demo App Documentation<a class="headerlink" href="#demo-app-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Demo App Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#about">About</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#created-with">Created with</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-and-running-the-application">Setting up and running the application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#developer-documentation">Developer documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#api">API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="demo.html">app Package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="demo.html#module-app.__init__"><tt class="docutils literal"><span class="pre">app</span></tt></a></li>
+<li class="toctree-l5"><a class="reference internal" href="demo.html#module-app.admin"><tt class="docutils literal"><span class="pre">admin</span></tt></a></li>
+<li class="toctree-l5"><a class="reference internal" href="demo.html#module-app.forms"><tt class="docutils literal"><span class="pre">forms</span></tt></a></li>
+<li class="toctree-l5"><a class="reference internal" href="demo.html#module-app.models"><tt class="docutils literal"><span class="pre">models</span></tt></a></li>
+<li class="toctree-l5"><a class="reference internal" href="demo.html#module-app.views"><tt class="docutils literal"><span class="pre">views</span></tt></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="demo-other.html">Other</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="demo-other.html#module-app.tests.ttools"><tt class="docutils literal"><span class="pre">ttools</span></tt></a></li>
+<li class="toctree-l5"><a class="reference internal" href="demo-other.html#helpers"><tt class="docutils literal"><span class="pre">helpers</span></tt></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="demo-tests.html">Unit tests</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="demo-tests.html#module-app.tests.__init__"><tt class="docutils literal"><span class="pre">demo</span> <span class="pre">tests</span></tt></a></li>
+<li class="toctree-l5"><a class="reference internal" href="demo-tests.html#module-app.tests.test_admin"><tt class="docutils literal"><span class="pre">tests_admin</span></tt></a></li>
+<li class="toctree-l5"><a class="reference internal" href="demo-tests.html#module-app.tests.test_forms"><tt class="docutils literal"><span class="pre">tests_forms</span></tt></a></li>
+<li class="toctree-l5"><a class="reference internal" href="demo-tests.html#module-app.tests.test_models"><tt class="docutils literal"><span class="pre">tests_models</span></tt></a></li>
+<li class="toctree-l5"><a class="reference internal" href="demo-tests.html#module-app.tests.test_views"><tt class="docutils literal"><span class="pre">tests_views</span></tt></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#internal-documentation-design-notes">Internal documentation/design notes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="internal_and_design.html">Form handling</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="internal_and_design.html#customer-contact-form-handling">Customer contact form handling</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="internal_and_design.html#validation">Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="internal_and_design.html#admin-form-for-viewing-editing-deleting-individual-customer-records-handling">Admin form (for viewing/editing/deleting individual customer records) handling</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="internal_and_design.html#id1">Validation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="internal_and_design.html#multiple-emails">Multiple emails</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="internal_and_design.html#why-create-a-new-model-that-holds-only-an-emailfield-and-a-fk">Why create a new model that holds only an <cite>EmailField</cite> and a FK?</a></li>
+<li class="toctree-l5"><a class="reference internal" href="internal_and_design.html#why-do-customers-see-a-single-text-field-for-emails-but-administrative-users-see-separate-fields">Why do customers see a single text field for emails, but administrative users see separate fields?</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="internal_and_design.html#schema">Schema</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#testing-and-coverage">Testing and coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#end-user-administrative-users-documentation">End user (administrative users) documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#viewing-all-customers"><strong>Viewing all customers</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#editing-customers"><strong>Editing customers</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deleting-customers"><strong>Deleting customers</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#individually">Individually</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#batch">Batch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#meta">Meta</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#this-documentation">This documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
+<p>Small demo of single-page web application with a contact form for customers
+and an administrative interface for admin users to manage (display, search,
+edit, delete) customers&#8217; information. The form for customers contains fields
+for contact information. <em>Customers should be able to enter
+multiple email addresses.</em></p>
+</div>
+<div class="section" id="created-with">
+<h2>Created with<a class="headerlink" href="#created-with" title="Permalink to this headline">¶</a></h2>
+<p>Python/Django/SQLite (development version)</p>
+<p>The front end  (customer contact information form) is responsively styled using
+<a class="reference external" href="http://getbootstrap.com/">Bootstrap</a> and <a class="reference external" href="https://github.com/dyve/django-bootstrap-toolkit/">Django Bootstrap Toolkit</a>. The admin interface
+(list of users, change form for individual users, login) is responsively styled
+using <a class="reference external" href="http://getbootstrap.com/">Bootstrap</a> and <a class="reference external" href="http://djangosuit.com/">Django Suit</a>, with some customization.</p>
+</div>
+<div class="section" id="setting-up-and-running-the-application">
+<h2>Setting up and running the application<a class="headerlink" href="#setting-up-and-running-the-application" title="Permalink to this headline">¶</a></h2>
+<p>Clone the repository.</p>
+<div class="highlight-shell"><pre>$ git clone git@github.com:gnarlinsky/ext_demo.git</pre>
+</div>
+<p>To avoid dependency issues, create a virtualenv and install the required
+packages.</p>
+<p>Inside whereever you keep your virtualenv&#8217;s:</p>
+<div class="highlight-shell"><pre>$ virtualenv ve --no-site-packages
+$ source ve/bin/activate      # activate the virtual environment</pre>
+</div>
+<p>Install the requirements:</p>
+<div class="highlight-shell"><pre>$ cd ext_demo/mysite/
+$ pip install -r requirements.txt</pre>
+</div>
+<p>Create the database and load the initial data:</p>
+<div class="highlight-shell"><pre>$ python manage.py syncdb
+$ python manage.py loaddata app/fixtures/initial.json</pre>
+</div>
+<p>Run the Django development server:</p>
+<div class="highlight-shell"><pre>$ python manage.py runserver</pre>
+</div>
+<p>Go to [<a class="reference external" href="http://localhost:8000/signup](http://localhost:8000/signup">http://localhost:8000/signup](http://localhost:8000/signup</a>) to see
+interface for customers,
+or to [<a class="reference external" href="http://localhost:8000/admin](http://localhost:8000/signupadmin">http://localhost:8000/admin](http://localhost:8000/signupadmin</a>) to see the
+administrative interface. Log in with username <em>homer</em> and password <em>homer</em>.</p>
+<p>Note that <cite>manage.py syncdb</cite> creates a database, so if you would like to
+start fresh, make sure to delete it. Assuming you&#8217;re still in the same
+directory (<cite>ext_demo/mysite/</cite>):</p>
+<div class="highlight-python"><pre>$ rm mysite_config_root/default.db</pre>
+</div>
+</div>
+<div class="section" id="developer-documentation">
+<h2>Developer documentation<a class="headerlink" href="#developer-documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="api">
+<h3>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">app Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demo.html#module-app.__init__"><tt class="docutils literal"><span class="pre">app</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo.html#module-app.admin"><tt class="docutils literal"><span class="pre">admin</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo.html#module-app.forms"><tt class="docutils literal"><span class="pre">forms</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo.html#module-app.models"><tt class="docutils literal"><span class="pre">models</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo.html#module-app.views"><tt class="docutils literal"><span class="pre">views</span></tt></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demo-other.html">Other</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demo-other.html#module-app.tests.ttools"><tt class="docutils literal"><span class="pre">ttools</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo-other.html#helpers"><tt class="docutils literal"><span class="pre">helpers</span></tt></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demo-tests.html">Unit tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demo-tests.html#module-app.tests.__init__"><tt class="docutils literal"><span class="pre">demo</span> <span class="pre">tests</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo-tests.html#module-app.tests.test_admin"><tt class="docutils literal"><span class="pre">tests_admin</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo-tests.html#module-app.tests.test_forms"><tt class="docutils literal"><span class="pre">tests_forms</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo-tests.html#module-app.tests.test_models"><tt class="docutils literal"><span class="pre">tests_models</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo-tests.html#module-app.tests.test_views"><tt class="docutils literal"><span class="pre">tests_views</span></tt></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="internal-documentation-design-notes">
+<h3>Internal documentation/design notes<a class="headerlink" href="#internal-documentation-design-notes" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="internal_and_design.html">Form handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="internal_and_design.html#customer-contact-form-handling">Customer contact form handling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="internal_and_design.html#validation">Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="internal_and_design.html#admin-form-for-viewing-editing-deleting-individual-customer-records-handling">Admin form (for viewing/editing/deleting individual customer records) handling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="internal_and_design.html#id1">Validation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="internal_and_design.html#multiple-emails">Multiple emails</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="internal_and_design.html#why-create-a-new-model-that-holds-only-an-emailfield-and-a-fk">Why create a new model that holds only an <cite>EmailField</cite> and a FK?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internal_and_design.html#why-do-customers-see-a-single-text-field-for-emails-but-administrative-users-see-separate-fields">Why do customers see a single text field for emails, but administrative users see separate fields?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="internal_and_design.html#schema">Schema</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="testing-and-coverage">
+<h2>Testing and coverage<a class="headerlink" href="#testing-and-coverage" title="Permalink to this headline">¶</a></h2>
+<p>The script <cite>cover.sh</cite> (in the <cite>mysite</cite> directory, on the same level as
+<cite>manage.py</cite>) runs the tests (see <tt class="xref py py-mod docutils literal"><span class="pre">app.tests</span></tt>) and determines test
+coverage, with detailed HTML results.</p>
+<div class="highlight-shell"><pre>$ ./cover.sh
+Creating test database for alias 'default'...
+
+TestCase AdminTests
+test_clean:  Test that if the Emails ('all_emails') field does not contain at
+        least one valid email address, the correct error is returned.
+
+TestCase HelpersTests
+test_helpers:
+        Test that valid email addresses are parsed from string.
+
+        Is empty string parsed correctly?
+        Is a single non-email string parsed correctly?
+
+        &lt; . . . omitting output . . .  &gt;
+
+----------------------------------------------------------------------
+Ran 30 tests in 0.016s
+
+OK
+Destroying test database for alias 'default'...
+Name           Stmts   Miss  Cover   Missing
+--------------------------------------------
+app/__init__       0      0   100%
+app/admin         29     11    62%   19-28, 68
+app/forms         19      0   100%
+app/helpers        4      0   100%
+app/models        26      0   100%
+app/views         25     16    36%   13, 19-38
+--------------------------------------------
+TOTAL            103     27    74%
+
+HTML results are in htmlcov/index.html</pre>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Cover.sh</strong> - The line <tt class="docutils literal"><span class="pre">open</span> <span class="pre">htmlcov/index.html</span></tt> opens the HTML
+coverage information with your system&#8217;s default browser. Note this may only work
+in OS X, where the <tt class="docutils literal"><span class="pre">open</span></tt> command opens directories and files with the
+default application for the file&#8217;s extension — so you might want to comment out
+that statement.</p>
+</div>
+</div>
+<div class="section" id="end-user-administrative-users-documentation">
+<h2>End user (administrative users) documentation<a class="headerlink" href="#end-user-administrative-users-documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="viewing-all-customers">
+<h3><strong>Viewing all customers</strong><a class="headerlink" href="#viewing-all-customers" title="Permalink to this headline">¶</a></h3>
+<p>After logging in at <cite>http://localhost:8000/admin/</cite> (username and password
+&#8220;homer&#8221;),</p>
+<img alt="_images/login.png" src="_images/login.png" style="width: 220px;" />
+<p>you will be taken to the main admin screen, where you can view the
+current signed-up customers. Here you can sort the columns and search on any
+field.</p>
+<img alt="_images/admin_change_list_whole_screenshot.png" src="_images/admin_change_list_whole_screenshot.png" style="width: 600px;" />
+</div>
+<div class="section" id="editing-customers">
+<h3><strong>Editing customers</strong><a class="headerlink" href="#editing-customers" title="Permalink to this headline">¶</a></h3>
+<p>Clicking on a name on the main admin screen (see above) takes you to that
+customer&#8217;s individual page. Here you can edit the customer&#8217;s information.</p>
+<img alt="_images/admin_change_form_screenshot.png" src="_images/admin_change_form_screenshot.png" style="width: 600px;" />
+</div>
+<div class="section" id="deleting-customers">
+<h3><strong>Deleting customers</strong><a class="headerlink" href="#deleting-customers" title="Permalink to this headline">¶</a></h3>
+<p>You can delete customers&#8217; records from either the individual customers&#8217; pages,
+on at a time or from the main admin screen. Here you can also <em>batch delete</em>
+more than one customer.</p>
+<div class="section" id="individually">
+<h4>Individually<a class="headerlink" href="#individually" title="Permalink to this headline">¶</a></h4>
+<img alt="_images/admin_change_form_screenshot_circled_delete.png" src="_images/admin_change_form_screenshot_circled_delete.png" style="width: 600px;" />
+</div>
+<div class="section" id="batch">
+<h4>Batch<a class="headerlink" href="#batch" title="Permalink to this headline">¶</a></h4>
+<img alt="_images/batch_delete_screenshot.png" src="_images/batch_delete_screenshot.png" style="width: 600px;" />
+</div>
+</div>
+</div>
+<div class="section" id="meta">
+<h2>Meta<a class="headerlink" href="#meta" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="this-documentation">
+<h3>This documentation<a class="headerlink" href="#this-documentation" title="Permalink to this headline">¶</a></h3>
+<p>Documentation created with <a class="reference external" href="http://sphinx-doc.org/">Sphinx, a Python document generator</a>.</p>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Demo App Documentation</a><ul>
+<li><a class="reference internal" href="#about">About</a></li>
+<li><a class="reference internal" href="#created-with">Created with</a></li>
+<li><a class="reference internal" href="#setting-up-and-running-the-application">Setting up and running the application</a></li>
+<li><a class="reference internal" href="#developer-documentation">Developer documentation</a><ul>
+<li><a class="reference internal" href="#api">API</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#internal-documentation-design-notes">Internal documentation/design notes</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#testing-and-coverage">Testing and coverage</a></li>
+<li><a class="reference internal" href="#end-user-administrative-users-documentation">End user (administrative users) documentation</a><ul>
+<li><a class="reference internal" href="#viewing-all-customers"><strong>Viewing all customers</strong></a></li>
+<li><a class="reference internal" href="#editing-customers"><strong>Editing customers</strong></a></li>
+<li><a class="reference internal" href="#deleting-customers"><strong>Deleting customers</strong></a><ul>
+<li><a class="reference internal" href="#individually">Individually</a></li>
+<li><a class="reference internal" href="#batch">Batch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#meta">Meta</a><ul>
+<li><a class="reference internal" href="#this-documentation">This documentation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href=""
+                        title="next chapter">Demo App Documentation</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="#" title="Demo App Documentation"
+             >next</a> |</li>
+        <li><a href="#">Demo 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Nadia Karlinsky.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,180 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Other &mdash; Demo 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Demo 0.1 documentation" href="index.html" />
+    <link rel="next" title="Unit tests" href="demo-tests.html" />
+    <link rel="prev" title="app Package" href="demo.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="demo-tests.html" title="Unit tests"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="demo.html" title="app Package"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Demo 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="other">
+<h1>Other<a class="headerlink" href="#other" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-app.tests.ttools">
+<span id="ttools"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">ttools</span></tt><a class="headerlink" href="#module-app.tests.ttools" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="app.tests.ttools.t_info">
+<tt class="descclassname">app.tests.ttools.</tt><tt class="descname">t_info</tt><big>(</big><em>mess_str</em>, <em>level=1</em><big>)</big><a class="reference internal" href="_modules/app/tests/ttools.html#t_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#app.tests.ttools.t_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print message to screen related to what is currently being tested. If
+PRINT_INFO is False, these still serve as documentation for the associated
+lines. Takes a string with the message and level, which refers to the type
+of message, and formats the string with color and indentation accordingly.
+The higher the level number, the more verbose/specific.</p>
+<p>Types of messages:</p>
+<ul class="simple">
+<li>level 1: TestCase name (white on magenta, prepend new line)</li>
+<li>level 2: test method name and docstring (green, no indentation)</li>
+<li>level 3: action description (cyan, no indentation)</li>
+<li>level 4: assertion description (blue, indent one)</li>
+<li>level 5: closer assertion description (magenta, indent two)</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mess_str</strong> &#8211; The string to display</li>
+<li><strong>level</strong> &#8211; Optional int indicating the level number</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="helpers">
+<h2><tt class="xref py py-mod docutils literal"><span class="pre">helpers</span></tt><a class="headerlink" href="#helpers" title="Permalink to this headline">¶</a></h2>
+<p>In <a class="reference internal" href="demo.html#module-app.forms" title="app.forms"><tt class="xref py py-mod docutils literal"><span class="pre">app.forms</span></tt></a>, <a class="reference internal" href="#app.helpers.parse_emails" title="app.helpers.parse_emails"><tt class="xref py py-func docutils literal"><span class="pre">app.helpers.parse_emails()</span></tt></a> is used to extract valid emails from a string containing multiple emails and/or separator characters and/or gibberish, using a regular expression. The cleaned string is then stored in the form&#8217;s <cite>cleaned_data</cite> dictionary.</p>
+<p>In <a class="reference internal" href="demo.html#module-app.views" title="app.views"><tt class="xref py py-mod docutils literal"><span class="pre">app.views</span></tt></a>, <a class="reference internal" href="#app.helpers.parse_emails" title="app.helpers.parse_emails"><tt class="xref py py-func docutils literal"><span class="pre">app.helpers.parse_emails()</span></tt></a> is used to extract the valid emails from a string containing multiple emails and separator characters. A new CustomerEmail instance is then created for each email address; each CustomerEmail instance is associated with the current Customer instance (submitter of the form) with a ForeignKey relationship.</p>
+<span class="target" id="module-app.helpers"></span><dl class="function">
+<dt id="app.helpers.parse_emails">
+<tt class="descclassname">app.helpers.</tt><tt class="descname">parse_emails</tt><big>(</big><em>emails_string</em><big>)</big><a class="reference internal" href="_modules/app/helpers.html#parse_emails"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#app.helpers.parse_emails" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse valid email addresses from string.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>emails_string</strong> &#8211; The text to parse</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A string of valid email addresses</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Other</a><ul>
+<li><a class="reference internal" href="#module-app.tests.ttools"><tt class="docutils literal"><span class="pre">ttools</span></tt></a></li>
+<li><a class="reference internal" href="#helpers"><tt class="docutils literal"><span class="pre">helpers</span></tt></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="demo.html"
+                        title="previous chapter">app Package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="demo-tests.html"
+                        title="next chapter">Unit tests</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/demo-other.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="demo-tests.html" title="Unit tests"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="demo.html" title="app Package"
+             >previous</a> |</li>
+        <li><a href="index.html">Demo 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Nadia Karlinsky.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
