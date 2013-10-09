@@ -1,5 +1,9 @@
 from django.db import models
 from localflavor.us.us_states import STATE_CHOICES
+from django.db.models import signals
+from django.contrib.auth.management import create_superuser
+from django.contrib.auth import models as auth_models
+from django.conf import settings
 
 class EndUser(models.Model):
     """ Model representing user's contact information.
@@ -59,10 +63,10 @@ def create_testuser(app, created_models, verbosity, **kwargs):  # pragma: no cov
     if not settings.DEBUG:
         return
     try:
-        auth_models.User.objects.get(username='superuser')
+        auth_models.User.objects.get(username='homer')
     except auth_models.User.DoesNotExist:
         print '*' * 80
-        print 'Creating test user -- login: superuser, password: superuser'
+        print 'Creating test user -- login: homer, password: homer'
         print '*' * 80
         assert auth_models.User.objects.create_superuser(
             'homer', 'homer@gmail.com', 'homer')
