@@ -14,11 +14,11 @@ Created with
 Python/Django/SQLite (development version)
 
 The front end  (customer contact information form) is responsively styled using
-`Bootstrap <http://getbootstrap.com/>`_ and `Django Bootstrap Toolkit
-<https://github.com/dyve/django-bootstrap-toolkit/>`_. The admin interface
+[Bootstrap](http://getbootstrap.com/) and [Django Bootstrap Toolkit]
+(https://github.com/dyve/django-bootstrap-toolkit/). The admin interface
 (list of users, change form for individual users, login) is responsively styled
-using `Bootstrap <http://getbootstrap.com/>`_ and `Django Suit
-<http://djangosuit.com/>`_, with some customization.
+using [Bootstrap](http://getbootstrap.com/) and [Django Suit](http://djangosuit.com/), 
+with some customization.
 
 
 Setting up and running the application
