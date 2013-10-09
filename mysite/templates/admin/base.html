@@ -45,7 +45,7 @@
           <!-- Header -->
           <div id="header" class="header">
             <div id="branding">
-                  <a href="/admin/app/enduser/"><h1 id="site-name">{% block branding %}Signup Admin{% endblock %}</h1></a>
+                  <a href="/admin/app/customer/"><h1 id="site-name">{% block branding %}Signup Admin{% endblock %}</h1></a>
             </div>
             {% block header_content %}
             {% endblock %}
@@ -78,7 +78,7 @@
 
 
       <div class="suit-columns {{ is_popup|yesno:'one-column,two-columns' }}"
-      style="padding-right: 200px">
+      style="padding-right: 150px; padding-left: 100px">
 
         {% block content-center %}
           <div id="suit-center" class="suit-column">
