@@ -1,0 +1,123 @@
+[
+{
+  "pk": 4, 
+  "model": "app.enduser", 
+  "fields": {
+    "city": "Urbana", 
+    "first_name": "Alice", 
+    "last_name": "Smith", 
+    "phone": "2174174177", 
+    "state": "IL", 
+    "all_emails": "as@gmail.com", 
+    "street_address": "3 Main St."
+  }
+},
+{
+  "pk": 5, 
+  "model": "app.enduser", 
+  "fields": {
+    "city": "Chicago", 
+    "first_name": "Jane", 
+    "last_name": "Doe", 
+    "phone": "1234567890", 
+    "state": "IL", 
+    "all_emails": "alskdjfkld@gmail.com, asdfasfd, asdf2@gmail.com", 
+    "street_address": "1 Smith Ave."
+  }
+},
+{
+  "pk": 6, 
+  "model": "app.enduser", 
+  "fields": {
+    "city": "springfield", 
+    "first_name": "Lisa", 
+    "last_name": "Simpson", 
+    "phone": " 555-8707", 
+    "state": "IL", 
+    "all_emails": "lisa.s@gmail.com thelisa@simpsons.com", 
+    "street_address": "742 evergreen terrace"
+  }
+},
+{
+  "pk": 7, 
+  "model": "app.enduser", 
+  "fields": {
+    "city": "springfield", 
+    "first_name": "Maggie", 
+    "last_name": "Simpson", 
+    "phone": " 555-8707", 
+    "state": "IL", 
+    "all_emails": "maggie.s@gmail.com", 
+    "street_address": "742 evergreen terrace"
+  }
+},
+{
+  "pk": 8, 
+  "model": "app.enduser", 
+  "fields": {
+    "city": "springfield", 
+    "first_name": "Bart", 
+    "last_name": "Simpson", 
+    "phone": " 555-8707", 
+    "state": "IL", 
+    "all_emails": "cowabunga666@gmail.com", 
+    "street_address": "742 evergreen terrace"
+  }
+},
+{
+  "pk": 6, 
+  "model": "app.enduseremail", 
+  "fields": {
+    "enduser": 4, 
+    "email": "as@gmail.com"
+  }
+},
+{
+  "pk": 7, 
+  "model": "app.enduseremail", 
+  "fields": {
+    "enduser": 5, 
+    "email": "blah@gmail.com"
+  }
+},
+{
+  "pk": 8, 
+  "model": "app.enduseremail", 
+  "fields": {
+    "enduser": 5, 
+    "email": "blah2@gmail.com"
+  }
+},
+{
+  "pk": 9, 
+  "model": "app.enduseremail", 
+  "fields": {
+    "enduser": 6, 
+    "email": "lisa.s@gmail.com"
+  }
+},
+{
+  "pk": 10, 
+  "model": "app.enduseremail", 
+  "fields": {
+    "enduser": 6, 
+    "email": "thelisa@simpsons.com"
+  }
+},
+{
+  "pk": 11, 
+  "model": "app.enduseremail", 
+  "fields": {
+    "enduser": 7, 
+    "email": "maggie.s@gmail.com"
+  }
+},
+{
+  "pk": 12, 
+  "model": "app.enduseremail", 
+  "fields": {
+    "enduser": 8, 
+    "email": "cowabunga666@gmail.com"
+  }
+}
+]
