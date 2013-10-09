@@ -5,7 +5,7 @@ from django.contrib.auth.management import create_superuser
 from django.contrib.auth import models as auth_models
 from django.conf import settings
 
-class EndUser(models.Model):
+class Customer(models.Model):
     """ Model representing user's contact information.
     """
 
@@ -19,12 +19,12 @@ class EndUser(models.Model):
     all_emails = models.TextField('Email(s)', blank=False, null=False)
 
     def emails(self):
-        """ Gather all email addresses associated with this enduser.
+        """ Gather all email addresses associated with this customer.
 
         :returns: A string of email addresses, separated by commas
         """
         # referring to the "reverse" of a ForeignKey (many-to-one) relationship
-        all_emails = [e.__unicode__() for e in self.enduseremail_set.all()]
+        all_emails = [e.__unicode__() for e in self.customeremail_set.all()]
         return ', '.join(all_emails)
 
     def __unicode__(self):
@@ -32,11 +32,11 @@ class EndUser(models.Model):
         """
         return '{} {}'.format(self.first_name, self.last_name)
 
-class EndUserEmail(models.Model):
+class CustomerEmail(models.Model):
     """ Model representing email address, with ForeignKey (i.e. many-to-one
-    relationship) to an EndUser.
+    relationship) to an Customer.
     """
-    enduser = models.ForeignKey(EndUser)
+    customer = models.ForeignKey(Customer)
     email = models.EmailField(max_length=100, blank=False, null=False)
 
     def __unicode__(self):

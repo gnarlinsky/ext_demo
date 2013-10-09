@@ -1,16 +1,16 @@
 from django import forms
 from localflavor.us.us_states import STATE_CHOICES
-from app.models import EndUser
+from app.models import Customer
 from app.helpers import parse_emails
 
-class EndUserForm(forms.ModelForm):
-    """ Creates a form based on the `EndUser` model.  """
+class CustomerForm(forms.ModelForm):
+    """ Creates a form based on the `Customer` model.  """
 
     class Meta:
         """ Class container with various options (e.g. which fields should be
-        rendered) attached to EndUserForm instance.
+        rendered) attached to CustomerForm instance.
         """
-        model = EndUser
+        model = Customer
         fields = ('first_name', 'last_name', 'street_address', 'city', 'state',
                   'phone', 'all_emails')
         widgets = {
@@ -18,7 +18,7 @@ class EndUserForm(forms.ModelForm):
         }
 
     def __init__(self, *arg, **kwarg):
-        super(EndUserForm, self).__init__(*arg, **kwarg)
+        super(CustomerForm, self).__init__(*arg, **kwarg)
         # no empty forms
         self.empty_permitted = False
 
